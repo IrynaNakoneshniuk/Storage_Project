@@ -1,0 +1,24 @@
+﻿<Application x:Class="Storage_Project.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Storage_Project"
+              xmlns:view="clr-namespace:Storage_Project.View"
+             xmlns:viewmodels="clr-namespace:Storage_Project.ViewModel"
+            
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:AddNewConnectVM }">
+            <view:NewConnectPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AddGoodsVM}">
+            <view:AddGoodsPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AddVendorVM}">
+            <view:AddVendorPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EditVendorVM}">
+            <view:EditVendorPage/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

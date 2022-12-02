@@ -1,0 +1,40 @@
+﻿<Window x:Class="Storage_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Storage_Project" 
+        xmlns:viewmodel="clr-namespace:Storage_Project.ViewModel" 
+        xmlns:view="clr-namespace:Storage_Project.View"
+     
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding SelectedViewModel}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" />
+        <StackPanel>
+            <Menu Grid.Row="0" Grid.RowSpan="2"   Grid.Column="0" Background="White">
+                <MenuItem Header="Connect" Height="20" FontSize="12" Margin="5">
+                    <MenuItem Header="Select database" Height="14" FontSize="12" Margin="5 5 5 5 " Command="{Binding UpDateViewCommand}" CommandParameter="Connection"/>
+                </MenuItem>
+                <MenuItem Header="Add" Height="20" FontSize="12" Margin="5">
+                    <MenuItem Header="Add new goods"   Height="14" FontSize="12" Margin="5 5 5 5 " Command="{Binding UpDateViewCommand}" CommandParameter="Goods"/>
+                    <MenuItem Header="Add new vendor"  Height="14" FontSize="12" Margin="5 5 5 5 " Command="{Binding UpDateViewCommand }" CommandParameter="Vendor"/>
+                </MenuItem>
+                <MenuItem Header="Edit" Height="20" FontSize="12" Margin="5">
+                    <MenuItem Header="Edit goods"   Height="14" FontSize="12" Margin="5 5 5 5 " Command="{Binding UpDateViewCommand}" CommandParameter="EditGoods"/>
+                    <MenuItem Header="Edit  vendor"  Height="14" FontSize="12" Margin="5 5 5 5 " Command="{Binding UpDateViewCommand }" CommandParameter="EditVendor"/>
+                </MenuItem>
+            </Menu>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
